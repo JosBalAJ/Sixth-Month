@@ -166,6 +166,9 @@ body {
     .card2{
         margin-top: 40px;
         width: min(400px);
+    }
+
+    .letter{
         font-size: 2em;
     }
 }
