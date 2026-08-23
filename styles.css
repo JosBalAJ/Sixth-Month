@@ -131,16 +131,87 @@ body {
     pointer-events: none;
 }
 
-.card2{
+.card2 {
     width: min(900px);
     margin-bottom: 50px;
 }
 
 .letter {
-  font-family: "Tangerine", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2em;
+    font-family: "Tangerine", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+}
+
+.img_effect {
+    position: absolute;
+    z-index: 100;
+    border-radius: 1em;
+
+    box-shadow:
+        0 35px 100px rgba(97, 97, 97, 0.55),
+        0 0 50px rgba(194, 194, 195, 0.12),
+        inset 0 1px 0 rgba(224, 223, 223, 0.15);
+
+    transition: transform .3s;
+}
+
+.img_effect:hover {
+    cursor: pointer;
+}
+
+.img_group_1 {
+    transform: rotate(10deg);
+}
+
+.img_group_1:hover {
+    transform:
+        rotate(0deg) scale(1.15);
+}
+
+.img_group_2{
+    transform: rotate(-5deg);
+}
+
+.img_group_2:hover{
+    transform:
+        rotate(0deg) scale(1.15);
+}
+
+.img1 {
+    width: 15vw;
+    top: 5vh;
+    right: 5vw;
+}
+
+.img2 {
+    width: 10vw;
+    top: 5vh;
+    left: 5vw;
+}
+
+.img3{
+    width: 10vw;
+    top: 38vh;
+    left: 18vw;
+}
+
+.img4{
+    width: 10vw;
+    top: 38vh;
+    right: 18vw;
+}
+
+.img5{
+    width: 15vw;
+    bottom: 5vh;
+    left: 5vw;
+}
+
+.img6{
+    width: 10vw;
+    bottom: 5vh;
+    right: 5vw;
 }
 
 @media (max-width: 600px) {
@@ -163,12 +234,12 @@ body {
         filter: blur(80px);
     }
 
-    .card2{
+    .card2 {
         margin-top: 40px;
         width: min(400px);
     }
 
-    .card2 p{
+    .card2 p {
         font-size: 25px;
     }
 }
