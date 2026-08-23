@@ -8,7 +8,7 @@ body {
     background: #1f0000;
     color: white;
     font-family: Inter, system-ui, sans-serif;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .background {
@@ -169,11 +169,11 @@ body {
         rotate(0deg) scale(1.15);
 }
 
-.img_group_2{
+.img_group_2 {
     transform: rotate(-5deg);
 }
 
-.img_group_2:hover{
+.img_group_2:hover {
     transform:
         rotate(0deg) scale(1.15);
 }
@@ -184,34 +184,103 @@ body {
     right: 5vw;
 }
 
+body:has(img:hover) .mess1 {
+    transform: translateX(38vw)
+        rotate(10deg);
+}
+
+body:has(img:hover) .mess2 {
+    transform: translateX(38vw)
+        rotate(-10deg);
+}
+
+body:has(img:hover) .mess3 {
+    transform: translateX(38vw)
+        rotate(10deg);
+}
+
+body:has(img:hover) .mess4 {
+    transform: translateX(-38vw)
+        rotate(-10deg);
+}
+
+body:has(img:hover) .mess5 {
+    transform: translateX(-38vw)
+        rotate(10deg);
+}
+
+body:has(img:hover) .mess6 {
+    transform: translateX(-38vw)
+        rotate(-10deg);
+}
+
 .img2 {
     width: 10vw;
     top: 5vh;
     left: 5vw;
 }
 
-.img3{
+.img3 {
     width: 10vw;
     top: 38vh;
     left: 18vw;
 }
 
-.img4{
+.img4 {
     width: 10vw;
     top: 38vh;
     right: 18vw;
 }
 
-.img5{
+.img5 {
     width: 15vw;
     bottom: 5vh;
     left: 5vw;
 }
 
-.img6{
+.img6 {
     width: 10vw;
     bottom: 5vh;
     right: 5vw;
+}
+
+.message {
+    position: absolute;
+    background-color: white;
+    width: 10vw;
+    height: 20vh;
+    border-radius: 1em;
+    transition: .5s ease;
+}
+
+.mess1 {
+    top: 6vh;
+    left: -20vw;
+}
+
+.mess2{
+    top: 40vh;
+    left: -32vw;
+}
+
+.mess3{
+    bottom: 3vh;
+    left: -15vw;
+}
+
+.mess4{
+    top: 6vh;
+    right: -15vw;
+}
+
+.mess5{
+    top: 40vh;
+    right: -32vw;
+}
+
+.mess6{
+    bottom: 3vh;
+    right: -20vw;
 }
 
 @media (max-width: 600px) {
@@ -243,37 +312,37 @@ body {
         font-size: 25px;
     }
 
-    .img_effect{
+    .img_effect {
         position: fixed;
     }
 
-    .img1{
+    .img1 {
         width: 30vw;
         top: 3dvh;
     }
 
-    .img2{
+    .img2 {
         width: 25vw;
         top: 3dvh;
         left: 2vw;
     }
 
-    .img3{
+    .img3 {
         width: 25vw;
         left: 4vw;
     }
 
-    .img4{
+    .img4 {
         width: 25vw;
         right: 4vw;
     }
 
-    .img5{
+    .img5 {
         width: 30vw;
         bottom: 3dvh;
     }
 
-    .img6{
+    .img6 {
         width: 20vw;
         bottom: 3dvh;
     }
