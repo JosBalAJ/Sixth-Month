@@ -242,4 +242,39 @@ body {
     .card2 p {
         font-size: 25px;
     }
+
+    .img_effect{
+        position: fixed;
+    }
+
+    .img1{
+        width: 30vw;
+        top: 3dvh;
+    }
+
+    .img2{
+        width: 25vw;
+        top: 3dvh;
+        left: 2vw;
+    }
+
+    .img3{
+        width: 25vw;
+        left: 4vw;
+    }
+
+    .img4{
+        width: 25vw;
+        right: 4vw;
+    }
+
+    .img5{
+        width: 30vw;
+        bottom: 3dvh;
+    }
+
+    .img6{
+        width: 20vw;
+        bottom: 3dvh;
+    }
 }
