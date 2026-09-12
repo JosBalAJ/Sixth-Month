@@ -291,6 +291,10 @@ h1.letter {
         font-size: 2.6rem;
     }
 
+    .photo-item{
+        position: fixed;
+    }
+
     .photo-pos-1, .photo-pos-2, .photo-pos-3, 
     .photo-pos-4, .photo-pos-5, .photo-pos-6 {
         width: 18vw;
