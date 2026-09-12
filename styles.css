@@ -119,6 +119,10 @@ body {
     margin-bottom: 80px;
 }
 
+.card2 p {
+    font-size: 1.5rem;
+}
+
 .letter {
     font-family: "Tangerine", cursive;
     font-weight: 700;
