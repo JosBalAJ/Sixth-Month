@@ -308,6 +308,12 @@ h1.letter {
     .photo-pos-2, .photo-pos-3, .photo-pos-5 {
         left: 1.5vw;
     }
+    .photo-pos-3, .photo-pos-4{
+        top: 45%;
+    }
+    .photo-pos-5, .photo-pos-6{
+        top: 85%;
+    }
 
     .message {
         width: 130px;
