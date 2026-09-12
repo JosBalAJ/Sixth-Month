@@ -134,7 +134,7 @@ body {
     font-size: 1.5rem;
 }
 
-.card3{
+.card3 {
     margin-top: 200px;
 }
 
@@ -295,7 +295,7 @@ h1.letter {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 90px;    
+    gap: 90px;
 }
 
 .section-header {
@@ -512,6 +512,7 @@ h1.letter {
     .photo-pos-6 {
         width: 18vw;
         max-width: 90px;
+        position: fixed;
     }
 
     .photo-pos-1,
@@ -524,6 +525,27 @@ h1.letter {
     .photo-pos-3,
     .photo-pos-5 {
         left: 2vw;
+    }
+
+    .photo-pos-3,
+    .photo-pos-4 {
+        top: 45%;
+    }
+
+    .photo-pos-5,
+    .photo-pos-6 {
+        top: 85%;
+    }
+
+    .photo-item {
+        transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    }
+
+    .oculto-mobile {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none; /* Para que no se puedan tocar por error al estar ocultas */
+        transform: scale(0.8); /* Efecto de encogimiento elegante al desvanecer */
     }
 
     .message {

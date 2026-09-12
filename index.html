@@ -122,6 +122,7 @@
                 vida últimamente. Espero que el retraso no aminore los sentimientos que te proque recibir esto (que
                 inisisto, no sé si encontrarás bello).</p>
             <br>
+            <div id="fin-cartas"></div>
             <p>Al mismo tiempo siento que es bello que más de un mes pasó desde que quería entregarte esto, y mis
                 sentimientos por tí no han hecho más que crecer. El amor que siento por ti se intensifica
                 increíblemente.</p>
@@ -387,6 +388,30 @@
                 }
             });
         });
+
+        const marcadorFin = document.querySelector('#fin-cartas');
+        const fotosLaterales = document.querySelectorAll('.photo-item');
+
+        const observador = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (window.innerWidth <= 820) {
+                    // entry.boundingClientRect.top evalúa si el marcador ya subió más allá de la pantalla
+                    if (entry.boundingClientRect.top < window.innerHeight) {
+                        // El usuario ya scrolleó y llegó a los carruseles -> Oculta las fotos
+                        fotosLaterales.forEach(foto => foto.classList.add('oculto-mobile'));
+                    } else {
+                        // El usuario sigue arriba leyendo las cartas -> Muestra las fotos
+                        fotosLaterales.forEach(foto => foto.classList.remove('oculto-mobile'));
+                    }
+                }
+            });
+        }, {
+            threshold: 0 // Se dispara en el momento exacto en que el marcador toca la pantalla
+        });
+
+        if (marcadorFin) {
+            observador.observe(marcadorFin);
+        }
 
         // Manejo táctil y de clicks para las fotos de los 3 cilindros
         document.querySelectorAll('.cylinder-slide').forEach(slide => {
