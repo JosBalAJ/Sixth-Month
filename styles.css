@@ -550,8 +550,10 @@ h1.letter {
     .oculto-mobile {
         opacity: 0;
         visibility: hidden;
-        pointer-events: none; /* Para que no se puedan tocar por error al estar ocultas */
-        transform: scale(0.8); /* Efecto de encogimiento elegante al desvanecer */
+        pointer-events: none;
+        /* Para que no se puedan tocar por error al estar ocultas */
+        transform: scale(0.8);
+        /* Efecto de encogimiento elegante al desvanecer */
     }
 
     .message {
@@ -624,6 +626,25 @@ h1.letter {
     }
 }
 
+@media (min-width: 1200px) {
+
+    .photo-pos-1,
+    .photo-pos-2,
+    .photo-pos-3,
+    .photo-pos-4,
+    .photo-pos-5,
+    .photo-pos-6 {
+        width: 15vw;
+        max-width: 300px;
+    }
+
+    .message {
+        width: 10vw;
+        font-size: 2rem;
+        padding: 6px;
+    }
+}
+
 /* 3D Geometry: 6 items placed equidistant in a 360deg circle (radius 300px on desktop) */
 .slide-1 {
     transform: rotateY(0deg) translateZ(300px);
@@ -647,4 +668,266 @@ h1.letter {
 
 .slide-6 {
     transform: rotateY(300deg) translateZ(300px);
+}
+
+
+/* Panel de selección de canciones */
+.music-player-panel {
+    width: min(90%, 550px);
+    margin: 20px auto 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    text-align: center;
+    z-index: 15;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.player-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.player-icon {
+    font-size: 1.2rem;
+}
+
+/* Cuadrícula de botones */
+.tracks-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.track-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.track-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Estilo para el botón de la canción que está sonando actualmente */
+.track-btn.is-playing {
+    background: #eb6425;
+    border-color: #ff9a6c;
+    box-shadow: 0 0 15px rgba(235, 100, 37, 0.6);
+    font-weight: bold;
+    transform: scale(1.04);
+}
+
+/* =======================================================
+   SECCIÓN: CARRUSEL MANUAL DE TARJETAS (2 COLUMNAS)
+   ======================================================= */
+.manual-cards-section {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1100px;
+    margin: 80px auto 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Visor donde se ocultan las demás tarjetas */
+.slider-viewport {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 26px;
+}
+
+/* Riel que se desliza horizontalmente */
+.slider-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+}
+
+/* Cada tarjeta grande */
+.big-text-card {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 50px 45px;
+    text-align: left;
+    cursor: default;
+}
+
+.card-chapter-title {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffe6eb;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    text-shadow: 0 0 15px rgba(255, 120, 160, 0.4);
+}
+
+/* Distribución de las dos columnas de texto */
+.two-columns-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.text-col p {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 18px;
+}
+
+.text-col p:last-child {
+    margin-bottom: 0;
+}
+
+.col1{
+    text-align: right;
+}
+
+.col2{
+    text-align: left;
+}
+
+/* Flechas de navegación */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 20;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.prev-btn {
+    left: -26px;
+}
+
+.next-btn {
+    right: -26px;
+}
+
+.slider-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+.slider-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* Indicadores de bolitas (Dots) */
+.slider-dots {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+    justify-content: center;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #eb6425;
+    border-color: #ff9d71;
+    transform: scale(1.3);
+    box-shadow: 0 0 12px rgba(235, 100, 37, 0.8);
+}
+
+/* Adaptabilidad a dispositivos móviles */
+@media (max-width: 768px) {
+    .big-text-card {
+        padding: 35px 22px;
+    }
+
+    .card-chapter-title {
+        font-size: 1.25rem;
+        margin-bottom: 20px;
+    }
+
+    /* En celulares pasa a una sola columna para que el texto respire */
+    .two-columns-content {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .text-col p {
+        font-size: 0.92rem;
+        line-height: 1.65;
+        text-align: left;
+    }
+
+    .slider-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+    }
+
+    .prev-btn {
+        left: -12px;
+    }
+
+    .next-btn {
+        right: -12px;
+    }
 }
