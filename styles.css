@@ -640,7 +640,8 @@ h1.letter {
 
     .message {
         width: 10vw;
-        font-size: 2rem;
+        font-size: 1.5rem;
+        min-width: 200px;
         padding: 6px;
     }
 }
